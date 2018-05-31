@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/jsp">
+	
+	<decorator name="registeruser" page="login.jsp">
+		<pattern>/forgotpwd</pattern>
+	</decorator>
+	
+	<decorator name="loginpage" page="login.jsp">
+		<pattern>/</pattern>
+	</decorator>
+	
+	<decorator name="logoutpage" page="login.jsp">
+		<pattern>/logout</pattern>
+	</decorator>
+	
+	<decorator name="default" page="pagelayout.jsp">
+		<pattern>/**</pattern>
+	</decorator>
+	
+</decorators>
