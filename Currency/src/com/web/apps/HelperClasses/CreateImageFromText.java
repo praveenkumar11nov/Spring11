@@ -11,8 +11,8 @@ import javax.imageio.ImageIO;
 
 public class CreateImageFromText {
 	public static void main(String arg[]) throws Exception {
-		//createImage1("स्थाई शुल्क");
-		createImage1("प्रवीण कुमार");
+		createImage1("स्थाई शुल्क");
+		//createImage1("प्रवीण कुमार");
 		//createImage("Praveen Kumar");
 		//createImage1("Praveen Kumar");
 	}
