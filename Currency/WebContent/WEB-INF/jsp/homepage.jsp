@@ -1,3 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <div class="wrapper">
   <div class="content-wrapper">
     <section class="content-header">
@@ -6,8 +11,9 @@
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
+      Choose Language : <a href="?lang=en">English</a>  or   <a href="?lang=hi">Hindi</a>
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li class="active"><b><spring:message code="Dashboard"/></b></li>
       </ol>
     </section>
 

@@ -17,4 +17,12 @@
 		<pattern>/**</pattern>
 	</decorator>
 	
+	<decorator name="Home1" page="homepage.jsp">
+		<pattern>/successPage?lang=en</pattern>
+	</decorator>
+	
+	<decorator name="Home2" page="homepage.jsp">
+		<pattern>/successPage?lang=hi</pattern>
+	</decorator>
+	
 </decorators>

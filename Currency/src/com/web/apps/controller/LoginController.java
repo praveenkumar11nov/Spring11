@@ -51,6 +51,14 @@ public class LoginController {
 	@RequestMapping(value="/successPage",method={RequestMethod.GET,RequestMethod.POST})
 	public String getSuccessPage(HttpServletRequest request){
 		logger.info("---------------Inside LoginController.getSuccessPage()---------------");
+		
+	/*	HttpSession s=request.getSession(false);
+		if(s!=null){
+			s.getAttribute("name");
+			logger.info(s.getAttribute("name") + " User is still Logged in...........");
+			return "login";
+		}
+		*/
 		if(request.getParameter("Username")==null){
 			logger.info("UserName is null | Redirecting to login page");
 			return "login";
@@ -71,12 +79,16 @@ public class LoginController {
 	@RequestMapping(value="/logout",method={RequestMethod.GET,RequestMethod.POST})
 	public String getLoggedOut(HttpServletRequest request){
 		logger.info("---------------Inside LoginController.getLoggedOut()---------------");
-		HttpSession session=request.getSession(false);
-		session.removeAttribute("name");
+		try{
+			HttpSession session=request.getSession(false);
+			session.removeAttribute("name");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 		return "login";
 	}
 	
-	@Scheduled(cron="${scheduling.job.testcron}")
+	//@Scheduled(cron="${scheduling.job.testcron}")
 	public void cronTest(){
 		for(int i=1;i<6;i++){
 			System.out.println("CRON TESTING : " + i);
