@@ -1,5 +1,6 @@
 package com.web.apps.HelperClasses;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.EntityManager;
@@ -21,6 +22,58 @@ public class Testing {
 	protected static EntityManager entityManager;
 	
 	public static void main(String[] args) {
+		
+		String d="2018-01-28 17:36:17.783";
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.sss");
+		SimpleDateFormat sdf1=new SimpleDateFormat("dd/MM/yyyy");
+		try {
+			System.err.println(sdf1.format(sdf.parse(d)));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		/*Date curentdate = new Date();
+		curentdate.setMonth(4);
+		System.out.println("Date="+new SimpleDateFormat("dd/MM/yyyy").format(curentdate));
+		*/
+		/*
+		String Response=
+			"{\"data\":["+   "\n"+
+						
+			"{"+   "\n"+
+			"\"name\":\"Sachin\","+   "\n"+
+			"\"position\":\"Developer\","+   "\n"+
+			"\"salary\":\"$320,800\","+   "\n"+
+			"\"start_date\":\"2011/04/25\","+   "\n"+
+			"\"office\":\"Edinburgh\","+   "\n"+
+			"\"extn\":\"5421\""+   "\n"+
+			"}"+   "\n"+
+			
+			"{"+   "\n"+
+			"\"name\":\"Vinay\","+   "\n"+
+			"\"position\":\"Developer\","+   "\n"+
+			"\"salary\":\"$320,800\","+   "\n"+
+			"\"start_date\":\"2011/04/25\","+   "\n"+
+			"\"office\":\"Edinburgh\","+   "\n"+
+			"\"extn\":\"5421\""+   "\n"+
+			"}"+   "\n"+
+			
+			"{"+   "\n"+
+			"\"name\":\"Praveen\","+   "\n"+
+			"\"position\":\"Developer\","+   "\n"+
+			"\"salary\":\"$320,800\","+   "\n"+
+			"\"start_date\":\"2011/04/25\","+   "\n"+
+			"\"office\":\"Edinburgh\","+   "\n"+
+			"\"extn\":\"5421\""+   "\n"+
+			"}"+   "\n"+
+			
+			
+			"]}";
+		
+			
+			System.out.println("Response="+Response);*/
+		
 /*		System.out.println("----running-------");
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("defaultPersistenceUnit");
 		EntityManager em = emf.createEntityManager();
@@ -29,7 +82,7 @@ public class Testing {
 		System.out.println(U);
 		System.out.println("----running-------2");
 		*/
-		Users user=new Users();
+/*		Users user=new Users();
 		user.setNAME("Praveen");
 		user.setPASSWORD("123");
 		user.setSTATUS("Active");
@@ -40,7 +93,7 @@ public class Testing {
 		Session session = sessionFactory.openSession();
 		long id=(Long) session.save(user);
 		System.out.println("ID="+id);
-		session.flush();
+		session.flush();*/
 		
 		/*
 		Session session = entityManager.unwrap(Session.class);
@@ -75,7 +128,7 @@ public class Testing {
 	10*9*8*7
   11*12*13*14*15
 				 */
-		int N=4;
+	/*	int N=4;
 		int space=N;
 		int count=1;
 		for(int i=1;i<=N;i++){
@@ -96,7 +149,7 @@ public class Testing {
 			System.out.println("");
 		}
 		
-		
+		*/
 		
 		
 		
