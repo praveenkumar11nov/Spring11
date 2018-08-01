@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from SoapWebServiceService WSDL service -->
+
+  <service name="SoapWebService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://HelperClasses.apps.web.com"/>
+      <parameter name="wsdlServiceElement" value="SoapWebServiceService"/>
+      <parameter name="schemaQualified" value="http://HelperClasses.apps.web.com"/>
+      <parameter name="wsdlServicePort" value="SoapWebService"/>
+      <parameter name="className" value="com.web.apps.HelperClasses.SoapWebService"/>
+      <parameter name="wsdlPortType" value="SoapWebService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://HelperClasses.apps.web.com" xmlns:retNS="http://HelperClasses.apps.web.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sum" qname="operNS:sum" returnQName="retNS:sumReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://HelperClasses.apps.web.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:m" type="tns:int"/>
+        <parameter xmlns:pns="http://HelperClasses.apps.web.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:n" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://HelperClasses.apps.web.com" xmlns:retNS="http://HelperClasses.apps.web.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sub" qname="operNS:sub" returnQName="retNS:subReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://HelperClasses.apps.web.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:m" type="tns:int"/>
+        <parameter xmlns:pns="http://HelperClasses.apps.web.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:n" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="sub sum"/>
+
+  </service>
+</deployment>

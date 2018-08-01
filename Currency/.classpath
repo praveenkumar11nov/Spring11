@@ -59,6 +59,20 @@
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/org.apache.commons.httpclient.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/jta-1.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/jasypt-1.9.1.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasypt-spring3-1.9.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/jasypt-spring3-1.9.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/com.keepautomation.barcode.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/itextpdf-5.5.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-security-acl-3.1.4.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-security-config-3.1.4.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-security-core-3.1.4.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-security-crypto-3.1.4.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-security-ldap-3.1.4.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-security-taglibs-3.1.4.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-security-web-3.1.4.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/org.apache.poi.xwpf.converter.pdf-1.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/poi-ooxml-3.7.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-aop-3.2.3.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/aspectjrt-1.6.8.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/aspectjweaver-1.6.8.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

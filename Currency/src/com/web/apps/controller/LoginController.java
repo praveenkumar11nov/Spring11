@@ -52,6 +52,9 @@ public class LoginController {
 	public String getSuccessPage(HttpServletRequest request){
 		logger.info("---------------Inside LoginController.getSuccessPage()---------------");
 		
+		return "homepage";
+		
+		
 	/*	HttpSession s=request.getSession(false);
 		if(s!=null){
 			s.getAttribute("name");
@@ -59,7 +62,7 @@ public class LoginController {
 			return "login";
 		}
 		*/
-		if(request.getParameter("Username")==null){
+	/*	if(request.getParameter("Username")==null){
 			logger.info("UserName is null | Redirecting to login page");
 			return "login";
 		}else{
@@ -73,7 +76,7 @@ public class LoginController {
 				session.setAttribute("name",request.getParameter("Username"));
 				return "homepage";
 			}
-		}
+		}*/
 	}
 	
 	@RequestMapping(value="/logout",method={RequestMethod.GET,RequestMethod.POST})
