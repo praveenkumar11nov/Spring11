@@ -6,17 +6,24 @@
            http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security-3.1.xsd">
-    
+ <!-- 
     <http auto-config="true">  
-        <intercept-url pattern="/successPage" access="hasRole('ROLE_ADMIN')" />  
-    </http>
-    
-    <authentication-manager>  
-      <authentication-provider>  
-        <user-service>  
-        <user name="admin" password="1234" authorities="hasRole(ROLE_ADMIN)" />  
-        </user-service>  
-      </authentication-provider>  
-    </authentication-manager>  
-    
+       <intercept-url pattern="/login" access="ROLE_USER" />
+    </http> 
+--> 
+	<http auto-config="true">
+		<intercept-url pattern="/admin**" access="ROLE_USER" />
+		<form-login login-page="/login" default-target-url="/welcome" authentication-failure-url="/login?error" username-parameter="username" password-parameter="password" />
+		<logout logout-success-url="/login?logout" />
+		<!-- <csrf /> -->
+	</http>
+
+	<authentication-manager>
+		<authentication-provider>
+			<user-service>
+				<user name="mkyong" password="123456" authorities="ROLE_USER" />
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>
+	
 </beans:beans>

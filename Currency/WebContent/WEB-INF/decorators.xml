@@ -5,8 +5,12 @@
 		<pattern>/forgotpwd</pattern>
 	</decorator>
 	
-	<decorator name="loginpage" page="login.jsp">
+	<decorator name="loginpage1" page="login.jsp">
 		<pattern>/</pattern>
+	</decorator>
+
+	<decorator name="loginpage2" page="login.jsp">
+		<pattern>/login</pattern>
 	</decorator>
 	
 	<decorator name="logoutpage" page="login.jsp">

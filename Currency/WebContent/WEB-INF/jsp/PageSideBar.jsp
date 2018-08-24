@@ -1,7 +1,7 @@
 <title>MyTheme</title>
 
 <!--  This is Left Menu for all page   -->
-<!--  Ther is also one right menu bar in   footer.jsp   -->
+<!--  There is also one right menu bar in   footer.jsp   -->
 
 <aside class="main-sidebar">
 	<!-- sidebar: style can be found in sidebar.less -->

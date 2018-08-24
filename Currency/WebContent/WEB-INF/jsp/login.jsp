@@ -56,16 +56,19 @@ function checkpwd(){
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="./successPage" method="post" name="Login_Form" id="Login_Form" class="form-signin">
+    <form action="<c:url value='j_spring_security_check' />" method="POST"  name="Login_Form" id="Login_Form" class="form-signin">
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Email" name="Username" id="Username">
+        <input type="text" class="form-control" placeholder="Email" name="username" id="username">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password" name="Password" id="Password">
+        <input type="password" class="form-control" placeholder="Password" name="password" id="password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
-      <div class="row">
+
+	  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+	  
+	  <div class="row">
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
@@ -74,7 +77,7 @@ function checkpwd(){
           </div>
         </div>
         <div class="col-xs-4">
-          <button class="btn btn-primary btn-block btn-flat" onclick="return checkpwd();">Sign In</button>
+          <button class="btn btn-primary btn-block btn-flat" type="submit">Sign In</button>	<!-- onclick="return checkpwd();" -->
         </div>
       </div>
     </form>

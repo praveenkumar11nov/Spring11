@@ -24,7 +24,7 @@ public class LoginController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(value="/")
+	@RequestMapping(value= {"/","/login"})
 	public String getLoginPage(){
 		logger.info("---------------Inside LoginController.getLoginPage()---------------");
 /*		String username = ResourceBundle.getBundle("currency").getString("username");
@@ -52,16 +52,12 @@ public class LoginController {
 	public String getSuccessPage(HttpServletRequest request){
 		logger.info("---------------Inside LoginController.getSuccessPage()---------------");
 		
+		
+		HttpSession session=request.getSession(false);
+		session.setAttribute("name",request.getParameter("Username"));
+		
 		return "homepage";
 		
-		
-	/*	HttpSession s=request.getSession(false);
-		if(s!=null){
-			s.getAttribute("name");
-			logger.info(s.getAttribute("name") + " User is still Logged in...........");
-			return "login";
-		}
-		*/
 	/*	if(request.getParameter("Username")==null){
 			logger.info("UserName is null | Redirecting to login page");
 			return "login";

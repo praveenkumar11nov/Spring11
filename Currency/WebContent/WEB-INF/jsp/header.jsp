@@ -1,3 +1,29 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	var name="<%= session.getAttribute("name") %>";
+	if(name==null){
+		//alert("name="+name);
+		//window.location.href="./";
+	}else{
+		//alert("welcome User " + name);
+		//window.location.href="./";
+	}
+	
+<%-- 
+
+	<%
+	Object name=session.getAttribute("name");
+	if(name==null){
+		System.out.println("name="+name);
+		response.sendRedirect("login.jsp");
+	}else{
+		System.out.println("\nUser Logged in as "+name+"\n");
+	}
+	%>
+	
+--%>
+});
+</script>
 
   <header class="main-header">
     <!-- Logo -->

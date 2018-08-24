@@ -13,7 +13,7 @@
 
 		
 
-<!-- Enable AspectJ style of Spring AOP -->
+<!-- __________________________Enable AspectJ style of Spring AOP__________________________ -->
 <aop:aspectj-autoproxy />
 <!-- Configure Employee Bean and initialize it -->
 <!-- <bean name="webservice" class="com.web.apps.HelperClasses.WebServices">
@@ -24,7 +24,7 @@
 </bean> -->
 
 
-<!-- Schedular properties --> 
+<!-- __________________________Schedular Properties__________________________ --> 
 <task:annotation-driven executor="taskExecutor"/>
 <bean id="taskExecutor"
 		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
@@ -39,8 +39,8 @@
 
 </bean>
 
-<!-- Languauge Internationalisation Config Starts -->
-<!-- BsmartOne  -->
+<!-- __________________________Languauge Internationalization Config Starts__________________________ -->
+<!-- _______________________________________________BsmartOne________________________________________  -->
 	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
     	<property name="basenames" value="properties/message" />
     	<property name="defaultEncoding" value="UTF-8"/>
@@ -56,7 +56,7 @@
     	<property name="defaultLocale" value="en"/>
 	</bean>
 	
- <!-- Languauge Internationalisation Config Ends -->
+ <!-- __________________________Languauge Internationalization Config Ends__________________________ -->
 
 
 <context:component-scan base-package="com.web.apps" />
@@ -71,6 +71,5 @@
 <mvc:annotation-driven />
  
 <import resource="/config/data-access-config.xml" />
-<!-- <import resource="/config/SpringSecurity.xml" /> -->
  
 </beans>
