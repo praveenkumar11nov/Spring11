@@ -74,5 +74,36 @@
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-aop-3.2.3.RELEASE.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/aspectjrt-1.6.8.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/aspectjweaver-1.6.8.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JAX LIB"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/axis.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/FastInfoset.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/gmbal-api-only.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ha-api.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javax.annotation-api.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javax.xml.soap-api.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jaxb-core.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jaxb-impl.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jaxb-jxc.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jaxb-xjc.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jaxws-api.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jaxws-rt.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jaxws-tools.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jettison-1.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jsr181-api.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/management-api.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mimepull.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/policy.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/resolver.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/saaj-impl.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/saaj.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/stax-ex.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/stax2-api.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/streambuffer.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/woodstox-core-asl.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/wsdl4j.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

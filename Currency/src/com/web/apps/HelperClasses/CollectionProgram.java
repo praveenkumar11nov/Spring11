@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 public class CollectionProgram {
 	public static void main(String[] args) {
-		findDuplicateString("MYNAMEISRAMWHATSYOURNAME");
+		//findDuplicateString("MYNAMEISRAMWHATSYOURNAME");
 		findDuplicateWord("MY NAME IS RAM WHAT IS YOUR NAME");
 	}
 

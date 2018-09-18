@@ -29,4 +29,8 @@
 		<pattern>/successPage?lang=hi</pattern>
 	</decorator>
 	
+ 	<decorator name="webservice" page="NoContents.jsp">
+		<pattern>/useService</pattern>
+	</decorator>
+
 </decorators>

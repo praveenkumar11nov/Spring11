@@ -46,6 +46,20 @@
   <ns1:parameter name="wsdlTargetNamespace" value="http://HelperClasses.apps.web.com"/>
   <ns1:parameter name="wsdlServiceElement" value="SoapWebServiceService"/>
  </ns1:service>
+ <ns1:service name="SoapServiceImpl" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="sum" qname="ns3:sum" returnQName="ns3:sumReturn" returnType="xsd:int" soapAction="" xmlns:ns3="http://serviceImpl.apps.web.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns3:a" type="xsd:int"/>
+   <ns1:parameter qname="ns3:b" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="sum"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="SoapServiceImpl"/>
+  <ns1:parameter name="className" value="com.web.apps.serviceImpl.SoapServiceImpl"/>
+  <ns1:parameter name="wsdlServicePort" value="SoapServiceImpl"/>
+  <ns1:parameter name="schemaQualified" value="http://serviceImpl.apps.web.com"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://serviceImpl.apps.web.com"/>
+  <ns1:parameter name="wsdlServiceElement" value="SoapServiceImplService"/>
+ </ns1:service>
  <ns1:service name="Version" provider="java:RPC">
   <ns1:parameter name="allowedMethods" value="getVersion"/>
   <ns1:parameter name="className" value="org.apache.axis.Version"/>

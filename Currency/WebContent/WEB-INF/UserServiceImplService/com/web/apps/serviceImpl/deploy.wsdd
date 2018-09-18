@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from UserServiceImplService WSDL service -->
+
+  <service name="UserServiceImpl" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://serviceImpl.apps.web.com"/>
+      <parameter name="wsdlServiceElement" value="UserServiceImplService"/>
+      <parameter name="schemaQualified" value="http://serviceImpl.apps.web.com"/>
+      <parameter name="wsdlServicePort" value="UserServiceImpl"/>
+      <parameter name="className" value="com.web.apps.serviceImpl.UserServiceImpl"/>
+      <parameter name="wsdlPortType" value="UserServiceImpl"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://serviceImpl.apps.web.com" xmlns:retNS="http://serviceImpl.apps.web.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="validate" qname="operNS:validate" returnQName="retNS:validateReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://serviceImpl.apps.web.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:name" type="tns:string"/>
+        <parameter xmlns:pns="http://serviceImpl.apps.web.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:pwd" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://serviceImpl.apps.web.com" xmlns:retNS="http://serviceImpl.apps.web.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="find" qname="operNS:find" returnQName="retNS:findReturn" returnType="rtns:anyType" soapAction="">
+        <parameter xmlns:pns="http://serviceImpl.apps.web.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:anyType"/>
+      </operation>
+      <parameter name="allowedMethods" value="find validate"/>
+
+      <typeMapping xmlns:ns="http://serviceImpl.apps.web.com" qname="ns:&gt;findResponse" type="java:com.web.apps.serviceImpl.FindResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

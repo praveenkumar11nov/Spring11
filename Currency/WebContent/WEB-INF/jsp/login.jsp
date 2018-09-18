@@ -55,8 +55,13 @@ function checkpwd(){
   </div>
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
-
-    <form action="<c:url value='j_spring_security_check' />" method="POST"  name="Login_Form" id="Login_Form" class="form-signin">
+	<c:if test="${not empty error}">
+			<div class="error">${error}</div>
+		</c:if>
+		<c:if test="${not empty msg}">
+			<div class="msg">${msg}</div>
+		</c:if>
+    <form action="<c:url value='/j_spring_security_check' />" method="POST"  name="Login_Form" id="Login_Form" class="form-signin">
       <div class="form-group has-feedback">
         <input type="text" class="form-control" placeholder="Email" name="username" id="username">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -65,9 +70,6 @@ function checkpwd(){
         <input type="password" class="form-control" placeholder="Password" name="password" id="password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
-
-	  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-	  
 	  <div class="row">
         <div class="col-xs-8">
           <div class="checkbox icheck">
@@ -78,6 +80,7 @@ function checkpwd(){
         </div>
         <div class="col-xs-4">
           <button class="btn btn-primary btn-block btn-flat" type="submit">Sign In</button>	<!-- onclick="return checkpwd();" -->
+          <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
         </div>
       </div>
     </form>
