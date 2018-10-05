@@ -12,6 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.web.apps.HelperClasses.JavaMailAPI;
 import com.web.apps.service.UserService;
@@ -25,11 +27,23 @@ public class LoginController {
 	private UserService userService;
 	
 	@RequestMapping(value= {"/","/login"})
-	public String getLoginPage(){
+	public String getLoginPage(@RequestParam(value = "error", required = false) String error,
+			@RequestParam(value = "logout", required = false) String logout){
 		logger.info("---------------Inside LoginController.getLoginPage()---------------");
 /*		String username = ResourceBundle.getBundle("currency").getString("username");
 		String password = ResourceBundle.getBundle("currency").getString("password");
 		logger.info("username="+username+" password="+password);			*/
+		
+		ModelAndView model = new ModelAndView();
+		System.err.println("error ========> " + error);
+		System.err.println("logout ========> " + logout);
+		if (error != null) {
+			model.addObject("error", "Invalid username and password!");
+		}
+		if (logout != null) {
+			model.addObject("msg", "You've been logged out successfully.");
+		}
+		
 		return "login";
 	}
 	
@@ -54,7 +68,9 @@ public class LoginController {
 		
 		
 		HttpSession session=request.getSession(false);
-		session.setAttribute("name",request.getParameter("Username"));
+		session.setAttribute("name",request.getParameter("username"));
+		
+		System.err.println("username =======> "+request.getParameter("username"));
 		
 		return "homepage";
 		

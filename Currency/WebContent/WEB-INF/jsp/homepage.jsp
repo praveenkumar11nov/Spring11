@@ -4,21 +4,6 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
-	<c:url value="/j_spring_security_logout" var="logoutUrl" />
-	<form action="${logoutUrl}" method="post" id="logoutForm">
-		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-	</form>
-	<script>
-		function formSubmit() {
-			document.getElementById("logoutForm").submit();
-		}
-	</script>
-
-	<c:if test="${pageContext.request.userPrincipal.name != null}">
-		<h2>
-			Welcome : ${pageContext.request.userPrincipal.name} | <a href="javascript:formSubmit()"> Logout</a>
-		</h2>
-	</c:if>
 
 <div class="wrapper">
   <div class="content-wrapper">
@@ -28,7 +13,7 @@
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
-      Choose Language : <a href="?lang=en">English</a>  or   <a href="?lang=hi">Hindi</a>
+      Choose Language : <a href="?lang=en">English</a> or <a href="?lang=hi">हिंदी</a>
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active"><b><spring:message code="Dashboard"/></b></li>
       </ol>

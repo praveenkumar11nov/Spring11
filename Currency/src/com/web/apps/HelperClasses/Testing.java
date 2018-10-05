@@ -5,35 +5,16 @@ import java.util.Scanner;
 
 import org.springframework.util.StringUtils;
 public class Testing{
-	public static void main(String[] args) {
-		String text="Page+closed+by+Customer+%28after+page+load%29";
-		text=text.replace("+"," ");
-		text=text.replace("%","");
-		text=text.replace("2"," ");
-		text=text.replace("9"," ");
-		text=text.replace("8"," ");
-		System.out.println(text);
+	
+	public static void main(String[] args){
+		Integer i = new Integer(12); 
+		System.out.println(i); 
+		modify(i); 
+		System.out.println(i); 
 	}
-	
-	/*public static void createClass(String classname) {
-		try {
-			Object O = Class.forName("com.web.apps.HelperClasses."+StringUtils.capitalize(classname)).newInstance();
-			System.out.println("Object created : "+ O);
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-	}*/
-}
-/*
-class Car{
 
+	private static void modify(Integer i){ 
+		i = i + 1; 
+	} 
+	  
 }
-class Bike{
-	
-}
-class Cycle{
-	
-}
-class Plane{
-	
-}*/

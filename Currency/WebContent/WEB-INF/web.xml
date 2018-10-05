@@ -9,6 +9,8 @@
     <servlet-name>welcome</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+  
+  <!-- ________________________SiteMesh________________________ -->
   <display-name>sitemesh-webapp-example</display-name>
   <filter>
     <filter-name>sitemesh</filter-name>
@@ -21,6 +23,8 @@
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+  
+  <!-- _____________________________Spring Security______________________________ -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>
