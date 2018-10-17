@@ -29,6 +29,7 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>
 			/WEB-INF/config/SpringSecurity.xml
+			/WEB-INF/config/data-access-config.xml
 		</param-value>
   </context-param>
   <filter>

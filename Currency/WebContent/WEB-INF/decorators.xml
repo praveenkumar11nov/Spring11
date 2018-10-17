@@ -12,6 +12,10 @@
 	<decorator name="loginpage2" page="login.jsp">
 		<pattern>/login</pattern>
 	</decorator>
+
+	<decorator name="loginpage3" page="login.jsp">
+		<pattern>/registerUsers</pattern>
+	</decorator>
 	
 	<decorator name="logoutpage" page="login.jsp">
 		<pattern>/logout</pattern>

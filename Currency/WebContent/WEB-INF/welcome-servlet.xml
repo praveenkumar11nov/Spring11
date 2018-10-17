@@ -70,6 +70,6 @@
 <mvc:resources mapping="/resources/**" location="/resources/" />
 <mvc:annotation-driven />
  
-<import resource="/config/data-access-config.xml" />
+<!-- <import resource="/config/data-access-config.xml" /> -->
  
 </beans>

@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @NamedQueries({
-	@NamedQuery(name="users.getAlluser",query="select u from Users")
+	@NamedQuery(name="users.getAlluser",query="select u from Users u")
 })
 
 @Table(name="USERS")
@@ -25,14 +25,14 @@ public class Users {
 	@Column(name="ID")
 	private int ID;
 	
-	@Column(name="NAME")
-	private String NAME;
+	@Column(name="USERNAME")
+	private String USERNAME;
 	
 	@Column(name="PASSWORD")
 	private String PASSWORD;
 	
-	@Column(name="STATUS")
-	private String STATUS;
+	@Column(name="ENABLED")
+	private String ENABLED;
 	
 	@Column(name="CREATEDDATE")
 	private Date CREATEDDATE;
@@ -40,72 +40,69 @@ public class Users {
 	@Column(name="CREATEDBY")
 	private String CREATEDBY;
 	
+	@Column(name="EMAIL")
+	private String EMAIL;
 
 	public int getID() {
 		return ID;
 	}
 
-
 	public void setID(int iD) {
 		ID = iD;
 	}
 
-
-	public String getNAME() {
-		return NAME;
+	public String getUSERNAME() {
+		return USERNAME;
 	}
 
-
-	public void setNAME(String nAME) {
-		NAME = nAME;
+	public void setUSERNAME(String uSERNAME) {
+		USERNAME = uSERNAME;
 	}
-
 
 	public String getPASSWORD() {
 		return PASSWORD;
 	}
 
-
 	public void setPASSWORD(String pASSWORD) {
 		PASSWORD = pASSWORD;
 	}
 
-
-	public String getSTATUS() {
-		return STATUS;
+	public String getENABLED() {
+		return ENABLED;
 	}
 
-
-	public void setSTATUS(String sTATUS) {
-		STATUS = sTATUS;
+	public void setENABLED(String eNABLED) {
+		ENABLED = eNABLED;
 	}
-
 
 	public Date getCREATEDDATE() {
 		return CREATEDDATE;
 	}
 
-
 	public void setCREATEDDATE(Date cREATEDDATE) {
 		CREATEDDATE = cREATEDDATE;
 	}
-
 
 	public String getCREATEDBY() {
 		return CREATEDBY;
 	}
 
-
 	public void setCREATEDBY(String cREATEDBY) {
 		CREATEDBY = cREATEDBY;
 	}
 
+	public String getEMAIL() {
+		return EMAIL;
+	}
+
+	public void setEMAIL(String eMAIL) {
+		EMAIL = eMAIL;
+	}
 
 	@Override
 	public String toString() {
-		return "Users [ID=" + ID + ", NAME=" + NAME + ", PASSWORD=" + PASSWORD
-				+ ", STATUS=" + STATUS + ", CREATEDDATE=" + CREATEDDATE
-				+ ", CREATEDBY=" + CREATEDBY + "]";
+		return "Users [ID=" + ID + ", USERNAME=" + USERNAME + ", PASSWORD=" + PASSWORD + ", ENABLED=" + ENABLED
+				+ ", CREATEDDATE=" + CREATEDDATE + ", CREATEDBY=" + CREATEDBY + ", EMAIL=" + EMAIL + "]";
 	}
 	
 }

@@ -1,5 +1,7 @@
 package com.web.apps.controller;
 
+import java.util.Date;
+
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
 import javax.servlet.http.HttpServletRequest;
@@ -8,14 +10,19 @@ import javax.servlet.http.HttpSession;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.web.apps.HelperClasses.JavaMailAPI;
+import com.web.apps.model.UserRole;
+import com.web.apps.model.Users;
+import com.web.apps.service.RoleService;
 import com.web.apps.service.UserService;
 
 @Controller
@@ -26,17 +33,18 @@ public class LoginController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private RoleService roleService;
+	
 	@RequestMapping(value= {"/","/login"})
-	public String getLoginPage(@RequestParam(value = "error", required = false) String error,
-			@RequestParam(value = "logout", required = false) String logout){
-		logger.info("---------------Inside LoginController.getLoginPage()---------------");
+	public String getLoginPage(@RequestParam(value = "error", required = false) String error,@RequestParam(value = "logout", required = false) String logout){
+		logger.info("Inside LoginController.getLoginPage()____________________");
 /*		String username = ResourceBundle.getBundle("currency").getString("username");
-		String password = ResourceBundle.getBundle("currency").getString("password");
-		logger.info("username="+username+" password="+password);			*/
+		String password = ResourceBundle.getBundle("currency").getString("password");		*/
 		
 		ModelAndView model = new ModelAndView();
-		System.err.println("error ========> " + error);
-		System.err.println("logout ========> " + logout);
+		//System.err.println("error ========> " + error);
+		//System.err.println("logout ========> " + logout);
 		if (error != null) {
 			model.addObject("error", "Invalid username and password!");
 		}
@@ -44,6 +52,45 @@ public class LoginController {
 			model.addObject("msg", "You've been logged out successfully.");
 		}
 		
+		return "login";
+	}
+	
+	@RequestMapping(value= "/registerUsers")
+	public String registerTheUSer(HttpServletRequest request,Model model){
+		logger.info("Inside LoginController.registerTheUSer()____________________");
+		String username = request.getParameter("username");
+		String email = request.getParameter("email");
+		String pwd = request.getParameter("password");
+		String retypedpwd = request.getParameter("retypepwd");
+		
+		if(pwd.equalsIgnoreCase(retypedpwd)){
+			Users user = new Users();
+			user.setUSERNAME(username);
+			user.setPASSWORD(pwd);
+			user.setENABLED("1");
+			user.setCREATEDDATE(new Date());
+			user.setCREATEDBY(username);
+			user.setEMAIL(email);
+			try{
+				userService.save(user);
+				try{
+					UserRole role=new UserRole();
+					role.setUSERNAME(username);
+					role.setROLE("USER");
+					roleService.save(role);
+					model.addAttribute("msg","User is registered Successfully !");
+				}catch(Exception e){
+					logger.info("Exception came while creating role for user : " + e.getMessage());
+					model.addAttribute("msg","Error while creating role for user !");
+				}
+				
+			}catch(Exception e){
+				logger.info("Exception While Saving User : " + e.getMessage());
+				model.addAttribute("msg","Error while registering user !");
+			}
+		}else{
+			model.addAttribute("msg","User password is not matched !");
+		}
 		return "login";
 	}
 	
@@ -63,37 +110,17 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/successPage",method={RequestMethod.GET,RequestMethod.POST})
-	public String getSuccessPage(HttpServletRequest request){
-		logger.info("---------------Inside LoginController.getSuccessPage()---------------");
-		
-		
+	public String getSuccessPage(Authentication authentication,HttpServletRequest request){
+		logger.info("Inside LoginController.getSuccessPage()____________________");
+		System.err.println("USERNAME ======== " + authentication.getName());
 		HttpSession session=request.getSession(false);
-		session.setAttribute("name",request.getParameter("username"));
-		
-		System.err.println("username =======> "+request.getParameter("username"));
-		
+		session.setAttribute("name",authentication.getName());
 		return "homepage";
-		
-	/*	if(request.getParameter("Username")==null){
-			logger.info("UserName is null | Redirecting to login page");
-			return "login";
-		}else{
-			int validate=userService.validate(request.getParameter("Username"),request.getParameter("Password"));
-			if(validate==0){
-				logger.info("user name not found!");
-				return "login";
-			}else{
-				logger.info("Name="+request.getParameter("Username")+" Password="+request.getParameter("Password"));
-				HttpSession session=request.getSession(false);
-				session.setAttribute("name",request.getParameter("Username"));
-				return "homepage";
-			}
-		}*/
 	}
 	
 	@RequestMapping(value="/logout",method={RequestMethod.GET,RequestMethod.POST})
 	public String getLoggedOut(HttpServletRequest request){
-		logger.info("---------------Inside LoginController.getLoggedOut()---------------");
+		logger.info("Inside LoginController.getLoggedOut()____________________");
 		try{
 			HttpSession session=request.getSession(false);
 			session.removeAttribute("name");

@@ -8,23 +8,24 @@
            http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
     <http pattern="/resources**" security="none"/>
-    <!-- <http pattern="/web**" security="none"/> -->
+    <http pattern="/registerUsers" security="none"/>
 
 	<http auto-config="true" use-expressions="true">
 		<intercept-url pattern="/admin**"  access="hasRole('ROLE_USER')" />
-		
-		<form-login  login-processing-url="/j_spring_security_check" login-page="/login" default-target-url="/successPage" authentication-failure-url="/login?error" 
-												username-parameter="username" password-parameter="password" />
+		<form-login  login-processing-url="/j_spring_security_check" login-page="/login" default-target-url="/successPage" 
+			authentication-failure-url="/login?error" username-parameter="username" password-parameter="password" />
 		<logout logout-url="/j_spring_security_logout"  invalidate-session="true"  logout-success-url="/login?logout"  />
 		<!-- <csrf/> -->
 	</http>
 
 	<authentication-manager>
 		<authentication-provider>
-			<user-service>
-				<user name="pks" password="123" authorities="ROLE_USER" />
-				<user name="praveen" password="123" authorities="ROLE_USER" />
-			</user-service>
+		<!-- 	<user-service>  <user name="pks" password="123" authorities="ROLE_USER" />
+								<user name="praveen" password="123" authorities="ROLE_USER" />    </user-service> 		-->
+			<jdbc-user-service  data-source-ref="dataSource"
+			authorities-by-username-query="select USERNAME,ROLE from USER_ROLES where username =? " 
+			users-by-username-query="select username,password, enabled from USERS where username =?" />
+		
 		</authentication-provider>
 	</authentication-manager>
 

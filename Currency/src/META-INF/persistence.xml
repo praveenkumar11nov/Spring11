@@ -5,7 +5,8 @@
 	version="1.0">
 	<persistence-unit name="currency" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-         
+        <class>com.web.apps.model.Users</class>
+        <class>com.web.apps.model.UserRole</class>
          
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<!--DB configuration for Oracle -->
@@ -23,9 +24,7 @@
 			<property name="javax.persistence.jdbc.url" value="${datasource.url}" />
   	    	<property name="javax.persistence.jdbc.user" value="${datasource.username}" />
   	    	<property name="javax.persistence.jdbc.password" value="${datasource.password}" />
-		
-			
 		</properties>
+		
 	</persistence-unit>
-	
 </persistence>

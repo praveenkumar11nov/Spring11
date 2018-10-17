@@ -63,6 +63,20 @@
     width: 100%;
 }
 
+.login-box-body, .register-box-body {
+    background: #c366a1;
+    padding: 20px;
+    border-top: 0;
+    color: #666;
+}
+
+ /* 
+ #login {
+    padding-left: 10%;
+    padding-right: 60%;
+    padding-top: 8%;
+    width: 96%;
+} */
 </style>
 
 <script>
@@ -74,7 +88,7 @@ $(document).ready(function(){
    if(msg==""||msg==null){
 	   
    }else{
-	   alert(msg);
+	   //alert(msg);
    }
 });
 </script>
@@ -101,13 +115,17 @@ function registeruser(){
 	<div id="img-as-background">
 	 <div class="container">
 		<!-- <img src="https://image.freepik.com/free-vector/modern-abstract-background_1048-1003.jpg" alt="" />  -->
-		<img src="resources/image/background2.PNG" alt="" /> 
+		<!-- <img src="resources/image/background.jpg" alt="" />  -->
+		<!-- <img src="resources/image/background2.PNG" alt="" />  -->
+		<img src="resources/image/background3.jpg" alt="" /> 
+
 		<a href="./useService">&nbsp;&nbsp;&nbsp;<b>Application's Services</b></a>
 
 		<div class="login-box" id="login">
+		<!-- <div id="login" align="left"> -->
 
 			<div class="login-logo">
-				<a href="#"><b>Services</b></a>
+				<!-- <a href="#"><b>Services</b></a> -->
 			</div>
 			<div class="login-box-body">
 				<p class="login-box-msg">Sign in to start your session</p>
@@ -123,7 +141,7 @@ function registeruser(){
 					action="<c:url value='/j_spring_security_check' />" method='POST'
 					class="form-signin">
 					<div class="form-group has-feedback">
-						<input type="text" class="form-control" placeholder="Email"
+						<input type="text" class="form-control" placeholder="UserName"
 							name="username" id="username"> <span
 							class="glyphicon glyphicon-envelope form-control-feedback"></span>
 					</div>
@@ -205,23 +223,22 @@ function registeruser(){
 			<div class="register-box-body">
 				<p class="login-box-msg">Register a new membership</p>
 
-				<form action="#" method="post">
+				<form action="./registerUsers" method="post" name="Register_Form" id="Register_Form" class="form-signin">
 					<div class="form-group has-feedback">
-						<input type="text" class="form-control" placeholder="Full name">
+						<input type="text" class="form-control" placeholder="Full name" name="username">
 						<span class="glyphicon glyphicon-user form-control-feedback"></span>
 					</div>
 					<div class="form-group has-feedback">
-						<input type="email" class="form-control" placeholder="Email">
+						<input type="email" class="form-control" placeholder="Email" name="email">
 						<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 					</div>
 					<div class="form-group has-feedback">
-						<input type="password" class="form-control" placeholder="Password">
+						<input type="password" class="form-control" placeholder="Password" name="password">
 						<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 					</div>
 					<div class="form-group has-feedback">
-						<input type="password" class="form-control"
-							placeholder="Retype password"> <span
-							class="glyphicon glyphicon-log-in form-control-feedback"></span>
+						<input type="password" class="form-control" placeholder="Retype password" name="retypepwd"> 
+						<span class="glyphicon glyphicon-log-in form-control-feedback"></span>
 					</div>
 					<div class="row">
 						<div class="col-xs-8">
@@ -232,7 +249,7 @@ function registeruser(){
 							</div>
 						</div>
 						<div class="col-xs-4">
-							<button class="btn btn-primary btn-block btn-flat">Register</button>
+							<button class="btn btn-primary btn-block btn-flat" type="submit">Register</button>
 						</div>
 					</div>
 				</form>

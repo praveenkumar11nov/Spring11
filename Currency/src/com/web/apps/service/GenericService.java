@@ -1,5 +1,6 @@
 package com.web.apps.service;
 
 public interface GenericService<T> {
-	public T find(final Object id);
+	T find(final Object id);
+	T save(T t);
 }
