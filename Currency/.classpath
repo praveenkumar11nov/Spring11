@@ -9,6 +9,7 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/antlr-2.7.6.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/aopalliance-1.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/aspectjrt-1.6.8.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/aspectjweaver-1.6.8.jar"/>
@@ -105,6 +106,8 @@
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/streambuffer.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/woodstox-core-asl.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/wsdl4j.jar"/>
-	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/antlr-2.7.6.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/cglib-2.2.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-lang3-3.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

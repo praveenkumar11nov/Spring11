@@ -6,12 +6,10 @@
 	<persistence-unit name="currency" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
         <class>com.web.apps.model.Users</class>
-        <class>com.web.apps.model.UserRole</class>
          
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<!--DB configuration for Oracle -->
 		<properties>
-			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
 			<property name="hibernate.hbm2ddl.auto" value="none" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.HashtableCacheProvider" />
@@ -24,6 +22,7 @@
 			<property name="javax.persistence.jdbc.url" value="${datasource.url}" />
   	    	<property name="javax.persistence.jdbc.user" value="${datasource.username}" />
   	    	<property name="javax.persistence.jdbc.password" value="${datasource.password}" />
+			<property name="hibernate.dialect" value="${datasource.dialect}" />
 		</properties>
 		
 	</persistence-unit>

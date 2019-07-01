@@ -1,4 +1,5 @@
 <%@include file="decorator.jsp"%>
+<%@include file="googleLogin.jsp"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page session="true"%>
 
@@ -77,6 +78,12 @@
     padding-top: 8%;
     width: 96%;
 } */
+
+.abcRioButton abcRioButtonLightBlue {
+    height: 35px;
+    width: 320px;
+
+}
 </style>
 
 <script>
@@ -90,8 +97,16 @@ $(document).ready(function(){
    }else{
 	   //alert(msg);
    }
+<%-- 
+   var name="<%=session.getAttribute("name")%>";
+   alert("name ===== " + name);
+   if(name==null||name==''){
+	   signout();
+	}
+	 --%>
 });
 </script>
+
 <script type="text/javascript">
 function getPassword(){
 	$('#login').hide();
@@ -168,11 +183,16 @@ function registeruser(){
 
 				<div class="social-auth-links text-center">
 					<p>- OR -</p>
-					<a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i
-						class="fa fa-facebook"></i> Sign in using Facebook</a> <a href="#"
-						class="btn btn-block btn-social btn-google btn-flat"><i
-						class="fa fa-google-plus"></i> Sign in using Google+</a>
+					<a href="#" class="btn btn-block btn-social btn-facebook btn-flat">
+						<i class="fa fa-facebook"></i> Sign in using Facebook</a>
+						 
+				<!-- 	<a href="#" class="btn btn-block btn-social btn-google btn-flat">
+						<i class="fa fa-google-plus"></i> Sign in using Google+</a> -->
+						
+					<div class="g-signin2" data-onsuccess="onSignIn" id="myP"></div>
 				</div>
+				
+				
 				<!-- /.social-auth-links -->
 
 				<a href="#" onclick="getPassword()">Forgot Password</a><br> <a

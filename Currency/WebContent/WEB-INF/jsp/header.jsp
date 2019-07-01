@@ -27,6 +27,12 @@ $(document).ready(function(){
 
 <script>
 function formSubmit() {
+<%-- 
+	var name="<%=session.getAttribute("name")%>";
+	alert("name:"+name);
+	<% session.setAttribute("name",null); %>
+	alert("name:"+name);
+	 --%>
 	document.getElementById("logoutForm").submit();
 }
 </script>

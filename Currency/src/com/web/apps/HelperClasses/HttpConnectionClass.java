@@ -15,7 +15,8 @@ import org.apache.commons.httpclient.methods.PostMethod;
 import org.codehaus.jettison.json.JSONObject;
 class HttpConnectionClass{
 public static void main(String[]args){
-System.out.println("ServerResponse=>"+getResponseFrom("http://122.166.211.23:1001/bsmartjvvnl/Jvvnl/BillFecthApi?kno=210911011922","String","POST"));
+//System.out.println("ServerResponse=>"+getResponseFrom("http://122.166.211.23:1001/bsmartjvvnl/Jvvnl/BillFecthApi?kno=210911011922","String","POST"));
+	callSecureAPI();
 }
 	
 	public static String getResponseFrom(String url,String type,String method){
@@ -97,20 +98,25 @@ System.out.println("ServerResponse=>"+getResponseFrom("http://122.166.211.23:100
 		return null;
 	}
 	
-	/*
-	{
-		StringEntity se=new StringEntity(obj.toJSONString());
-		HttpClient httpClient = HttpClientBuilder.create().build();
-		HttpPost request=new HttpPost("http://182.18.140.195:7070/bsmartmdmDHBVN/email/1234");
-		request.setHeader("Content-type", "application/json");
-		System.out.println(se);
-		request.setEntity(se);
-		
-		HttpResponse response = httpClient.execute(request);
-        System.out.println(response.getStatusLine().getStatusCode());
-        System.err.println(new BasicResponseHandler().handleResponse(response));
-
+	public static void callSecureAPI(){
+		try{
+			URL u = new URL("http://192.168.2.156:5001/webapi/empdetails");
+			HttpURLConnection conn = (HttpURLConnection)u.openConnection();
+			conn.setRequestProperty("Content-Type", "application/JSON");
+			conn.setRequestProperty("Accept", "application/JSON");
+			conn.setRequestMethod("GET");
+			String line = "";
+			StringBuffer sb = new StringBuffer();
+			BufferedReader input = new BufferedReader(new InputStreamReader(conn.getInputStream()) );
+			while((line = input.readLine()) != null)
+				sb.append(line);
+			input.close();
+			conn.disconnect();
+			System.out.println("RESULT : "+sb.toString());
+		}catch (Exception e){
+			e.printStackTrace();
+		}
 	}
-	*/
+	
 	
 }
