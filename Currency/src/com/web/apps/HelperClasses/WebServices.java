@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@RequestMapping(value="/getData")
 public class WebServices {
 	
 	@RequestMapping(value="/getDataFromApplication",method={RequestMethod.GET},produces="application/json")
@@ -41,6 +42,9 @@ public class WebServices {
 		return response.toString();
 	
 	}
-
+	@RequestMapping(value="/Testapi",method={RequestMethod.GET})
+	public @ResponseBody String getData(HttpServletRequest request) {
+		return "API ACCESSED";
+	}
 	
 }

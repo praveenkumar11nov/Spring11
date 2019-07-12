@@ -6,6 +6,7 @@
 	<persistence-unit name="currency" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
         <class>com.web.apps.model.Users</class>
+        <class>com.web.apps.model.UserDetails</class>
          
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<!--DB configuration for Oracle -->

@@ -11,19 +11,23 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/antlr-2.7.6.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/aopalliance-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/asm-3.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/aspectjrt-1.6.8.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/aspectjweaver-1.6.8.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/axis.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/c3p0-0.9.1.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/cglib-2.2.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/com.keepautomation.barcode.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/commons-collections-3.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/commons-discovery-0.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/commons-lang3-3.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/commons-logging-1.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/commons-logging.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/dom4j-1.6.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/dom4j-1.6.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/FastInfoset.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/gmbal-api-only.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/gson-2.3.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/ha-api.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/hibernate-annotations-3.5.0-Final.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/hibernate-c3p0-4.2.1.Final.jar"/>
@@ -55,6 +59,7 @@
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/jsr181-api.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/jstl-1.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/jta-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/junit-4.11.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/log4j-1.2.17.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/mail.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/management-api.jar"/>
@@ -64,6 +69,7 @@
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/ojdbc6.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/org.apache.commons.httpclient.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/org.apache.poi.xwpf.converter.pdf-1.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/org.springframework.test-3.1.2.release.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/poi-ooxml-3.7.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/policy.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/resolver.jar"/>
@@ -96,6 +102,7 @@
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-security-ldap-3.1.4.RELEASE.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-security-taglibs-3.1.4.RELEASE.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-security-web-3.1.4.RELEASE.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-test-3.2.3.RELEASE.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-tx-3.1.1.RELEASE(1).jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-web-3.1.1.RELEASE.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/spring-webflow-2.3.1.RELEASE.jar"/>
@@ -106,8 +113,5 @@
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/streambuffer.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/woodstox-core-asl.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/wsdl4j.jar"/>
-	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/cglib-2.2.2.jar"/>
-	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/asm-3.1.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-lang3-3.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
