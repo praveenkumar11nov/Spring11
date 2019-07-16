@@ -113,5 +113,6 @@
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/streambuffer.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/woodstox-core-asl.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/wsdl4j.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-web-4.3.1.RELEASE.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
